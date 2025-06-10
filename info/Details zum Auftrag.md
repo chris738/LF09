@@ -22,3 +22,12 @@
 [ ] Die Adressvergabe soll zunächst statisch er
 
 ![Skizze](img/Skizze_LF09.png)
+
+-----
+
+### Anforderungen zur Absicherung der Router & Switches
+Erstellen eines Banners
+
+[ ] Setzen von Passwörtern
+
+[ ] Einrichten der SSH-Zugänge
