@@ -1,0 +1,34 @@
+exit
+exit
+exit
+
+enable
+configure terminal
+
+ipv6 unicast-routing  
+no ip domain-lookup
+
+hostname HH-GW-01
+
+interface gigabitEthernet 0/0/0
+description 'Route Hamburg to Lübeck'
+ipv6 address FD00:AB::A/64
+no shutdown
+
+interface GigabitEthernet 0/0/1
+description 'Route Hamburg to Munich' 
+ipv6 address FD00:DA::A/64
+no shutdown
+
+interface GigabitEthernet 0/0/2
+description 'Access Network' 
+ipv6 address 2001:DB8:A::1/64
+ipv6 address FE80::1 link-local
+no shutdown
+
+ipv6 route 2001:DB8:B::/64 FD00:AB::B
+ipv6 route 2001:DB8:C::/64 FD00:AB::B
+ipv6 route 2001:DB8:D::/64 FD00:DA::D
+
+do copy running-config startup-config
+
